@@ -70,6 +70,8 @@ def get_all_details(path):
     for id in tqdm.tqdm(vacant_ids):
         try:
             datum = get_detail_jobs(id)
+            if datum == 0:
+                continue
             data.append(datum)
             time.sleep(0.1)
         except Exception as e:
